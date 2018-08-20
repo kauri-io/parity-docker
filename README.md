@@ -35,7 +35,7 @@ docker run -it \
 
 | Name | Mandatory | Default | Description |
 | -------- | -------- | -------- | -------- |
-| AMOUNT | no | 5 | Accounts list (comma separated) to transfer from the miner  |
+| AMOUNT | no | 5 | Amount (in ether) to transfer to the `$ACCOUNTS`  |
 | ACCOUNTS | no |  | Accounts list (comma separated) to transfer from the miner  |
 
 
