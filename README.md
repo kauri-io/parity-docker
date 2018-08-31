@@ -27,8 +27,8 @@ docker run -it \
 
 | Name | Mandatory | Description |
 | -------- | -------- | -------- |
-| /root/.local/share/io.parity.ethereum  | yes | Chain data | 
-| /data/parity-logs | yes | Logs | 
+| /root/.local/share/io.parity.ethereum  | no | Chain data | 
+| /data/parity-logs | no | Logs | 
 
 
 ### Environment variables
