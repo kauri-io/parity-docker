@@ -4,6 +4,14 @@ A docker container to run a Parity DEV blockchain
 
 ## Getting started
 
+Simple:
+
+```
+docker run -it -p 8545:8545 kauriorg/parity-docker
+```
+
+Complete example:
+
 ```
 docker run -it \
 	-p 8545:8545 \
@@ -12,7 +20,7 @@ docker run -it \
 	-v /home/user/.docker_partity_log:/data/parity-logs \
 	-e AMOUNT=10 \
 	-e ACCOUNTS=0xf0f15cedc719b5a55470877b0710d5c7816916b1,0x31b26E43651e9371C88aF3D36c14CfD938BaF4Fd \
-	gjeanmart/parity-dev-docker
+	kauriorg/parity-docker
 ```
 
 ### Port
