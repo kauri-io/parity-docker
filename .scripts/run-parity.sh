@@ -19,6 +19,8 @@ fi
 nohup /parity/parity \
 	--chain dev \
 	--reseal-min-period 0 \
+	--ws-hosts '0.0.0.0' \
+	--ws-apis 'all' \
 	--jsonrpc-cors '*' \
 	--jsonrpc-hosts '0.0.0.0' \
 	--jsonrpc-apis 'all' \
