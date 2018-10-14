@@ -2,7 +2,7 @@ if [ ! -f ~/.local/share/io.parity.ethereum/password ]; then
   	echo "First time running parity"
   	#Parity doesnt seem to allow unlocking of accounts on first run!
   	#Need to run then kill, then run again unlocked.
-  	nohup /parity/parity --chain dev &
+  	nohup parity --chain dev &
   	export PID=$!
   	sleep 5
   	kill -9 $PID
@@ -16,7 +16,7 @@ if [ ! -f /data/parity-logs/parity.log ]; then
 	touch /data/parity-logs/parity.log
 fi
 
-nohup /parity/parity \
+nohup parity \
 	--chain dev \
 	--reseal-min-period 0 \
 	--ws-hosts '0.0.0.0' \
@@ -36,10 +36,10 @@ echo "Parity Running..."
 
 
 #  Transfer ether to accounts
-if [ ! -z "$ACCOUNTS" ]; then
+if [ ! -z "$TRANSFER_ACCOUNTS" ]; then
 	echo "Transfering ether to accounts"
-	for account in $(echo $ACCOUNTS | sed -n 1'p' | tr ',' '\n'); do
-	  	node /docker-scripts/transfer-ether.js "$account" "0x00a329c0648769A73afAc7F9381E08FB43dBEA72" $AMOUNT
+	for account in $(echo $TRANSFER_ACCOUNTS | sed -n 1'p' | tr ',' '\n'); do
+	  	node /docker-scripts/transfer-ether.js "$account" "0x00a329c0648769A73afAc7F9381E08FB43dBEA72" $TRANSFER_AMOUNT
 	done
 fi
 
