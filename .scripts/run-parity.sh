@@ -44,5 +44,12 @@ if [ ! -z "$TRANSFER_ACCOUNTS" ]; then
 fi
 
 
-#Keeps container alive
-node /docker-scripts/parity-block-scheduler.js
+#Schedule blocks or keep alive
+if [ "$NO_BLOCKS" = "true" ]
+then
+  echo "Block scheduling disabled"
+  tail -f /dev/null
+else
+  echo "Block scheduling enabled"
+  node /docker-scripts/parity-block-scheduler.js
+fi
