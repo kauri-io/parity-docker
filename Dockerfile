@@ -1,4 +1,4 @@
-FROM parity/parity:v2.1.2
+FROM parity/parity:v2.5.9-stable
 
 MAINTAINER Gregoire Jeanmart <gregoire.jeanmart@consensys.net> version: 0.2
 
