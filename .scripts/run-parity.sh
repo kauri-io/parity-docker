@@ -19,11 +19,13 @@ fi
 nohup parity \
 	--chain dev \
 	--reseal-min-period 0 \
-	--ws-hosts '0.0.0.0' \
-	--ws-apis 'all' \
-	--jsonrpc-cors '*' \
-	--jsonrpc-hosts '0.0.0.0' \
-	--jsonrpc-apis 'all' \
+  --ws-port=8546 \
+  --ws-interface=0.0.0.0 \
+  --ws-origins=all \
+  --ws-hosts=all \
+  --jsonrpc-port=8545 \
+  --jsonrpc-interface=0.0.0.0 \
+  --jsonrpc-cors=all \
 	--geth \
 	--force-ui \
 	--unsafe-expose \
